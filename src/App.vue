@@ -3,8 +3,8 @@
     <v-main class="mn">
 
       <router-view />
-      <div class="bar">
-        <div class="menuEl">
+      <div class="bar" v-show="isVisible">
+        <div class="menuEl" v-on:click="redirect('home')">
           <v-img class="sImg" :src="require('./assets/Home.png')" max-width="22px" max-height="22px" />
           <div class="menuTxt">Главная</div>
         </div>
@@ -26,13 +26,26 @@
 </template>
 
 <script>
-
+import router from '@/router';
+import store from '@/store'
 export default {
   name: 'App',
 
   data: () => ({
-    //
   }),
+  methods:{
+    redirect(n){
+      router.push({name:n})
+    }
+  },
+  computed:{
+    isVisible:()=>{
+      if(store.state.User.id === null){
+        return false
+      }
+      return true
+    }
+  }
 };
 </script>
 <style scoped lang="scss">

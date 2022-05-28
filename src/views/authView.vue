@@ -16,7 +16,6 @@
 
 <script>
 import AuthApiService from "@/services/authApiService"
-import store from '@/store'
 //ИДБ-20-01
 export default {
     name: 'enter-view',
@@ -55,7 +54,7 @@ export default {
                     this.valid= false
                 }
                 if(user !== undefined){
-                    store.commit('setUser',{user:user.data,name:name,group:this.group})
+                    this.$store.commit('setUser',{user:user.data,name:name,group:this.group})
                     this.$router.push({name:'home'})
                 }
             }   

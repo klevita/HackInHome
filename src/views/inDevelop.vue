@@ -1,30 +1,45 @@
 <template>
     <div class="mn">
-        <h1>Страница в разработке</h1>
+        <div class="round">
+            <h1 style="color:#4A96FE">Страница в разработке</h1>
+        </div>
     </div>
 </template>
 
 <script>
-import AuthApiService from "@/services/authApiService"
-import store from '@/store'
 //ИДБ-20-01
 export default {
     name: 'enter-view',
     data: () => ({
-        
+
     }),
     components: {
 
     },
+    mounted(){
+        this.$store.commit('setUser',{user:{studentId:null,groupId:null,groupHeadId:null},name:'',group:''})
+    },
     methods: {
-        
+
     },
 }
 </script>
 <style scoped lang="scss">
 .mn {
-    margin: calc(100vh / 2 - 180px) 5px 5px 5px;
-    border-radius: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vw;
+    border-radius: 100%;
     background-color: white;
 }
 </style>
