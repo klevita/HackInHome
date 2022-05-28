@@ -1,6 +1,19 @@
 <template>
-  <div>
-    
+  <div class="mn">
+    <div class="func">
+      <div class="func">
+        <div class="funcEl" v-on:click=""></div>
+        <div class="funcEl" v-on:click=""></div>
+        <div class="funcEl" v-on:click=""></div>
+        <div class="funcEl" v-on:click=""></div>
+      </div>
+      <div class="func">
+        <div class="funcEl" v-on:click=""></div>
+        <div class="funcEl" v-on:click=""></div>
+        <div class="funcEl" v-on:click=""></div>
+        <div class="funcEl" v-on:click=""></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,3 +27,8 @@
     },
   }
 </script>
+<style scoped lang="scss">
+  .mn{
+
+  }
+</style>

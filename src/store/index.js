@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import VuexPersistence from 'vuex-persist'
 Vue.use(Vuex)
 //id fullname group_id teacherids
 export default new Vuex.Store({
@@ -27,5 +27,6 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
-  }
+  },
+  plugins: [new VuexPersistence().plugin]
 })

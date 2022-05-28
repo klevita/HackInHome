@@ -36,6 +36,7 @@ const router = new VueRouter({
   routes
 })
 router.beforeEach((to,from,next) => {
+  console.log(store.state.User)
   if (to.name !== 'enter' && to.name !== 'auth' && to.name !== 'registr' && store.state.User.id===null){
     next({name:'enter'})
   }
