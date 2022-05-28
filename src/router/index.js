@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/homeView.vue'
+import EnterView from '../views/enterView.vue'
+import AuthView from '../views/authView.vue'
+import store from '../store/index.js'
 
 Vue.use(VueRouter)
 
@@ -11,13 +14,20 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/enter',
+    name: 'enter',
+    component: EnterView
+  },
+  {
+    path: '/registr',
+    name: 'reistr',
+    component: EnterView
+  },
+  {
+    path: '/auth',
+    name: 'auth',
+    component: AuthView
+  },
 ]
 
 const router = new VueRouter({
@@ -25,5 +35,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+router.beforeEach((to,from,next) => {
+  if (to.name !== 'enter' && to.name !== 'auth' && to.name !== 'registr' && store.state.User.id===null){
+    next({name:'enter'})
+  }
+  next()
+})
 export default router
