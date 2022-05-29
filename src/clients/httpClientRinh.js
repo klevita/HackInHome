@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default () => {
-	const baseUrl = "http://109.107.183.61:8080/";
+	const baseUrl = "https://rinh-api.kovalev.team/";
 
 	return axios.create({
 		baseURL: baseUrl,

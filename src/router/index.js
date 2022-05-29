@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/homeView.vue'
+import myGroupView from '../views/myGroupView.vue'
 import EnterView from '../views/enterView.vue'
 import AuthView from '../views/authView.vue'
+import CheckView from '../views/checkView.vue'
+import prep from '../views/prepodsView.vue'
 import store from '../store/index.js'
 import dev from '../views/inDevelop.vue'
 
@@ -16,9 +19,24 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/myGroup',
+    name: 'myGroup',
+    component: myGroupView
+  },
+  {
+    path: '/myTeachers',
+    name: 'myTeachers',
+    component: prep
+  },
+  {
     path: '/enter',
     name: 'enter',
     component: EnterView
+  },
+  {
+    path: '/checkList',
+    name: 'check',
+    component: CheckView
   },
   {
     path: '/registr',

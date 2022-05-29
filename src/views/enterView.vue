@@ -4,7 +4,7 @@
             <v-img class="sImg" :src="require('../assets/StankinLogo.png')" max-width="60px" max-height="34px" />
         </div>
         <div class="subBlock">
-            <div style="margin-bottom:100px">
+            <div style="">
                 <h1>Добро пожаловать!</h1>
             </div>
             <v-btn class="btn" color='primary' v-on:click="$router.push({ name: 'registr'})">Регистрация</v-btn>
@@ -33,6 +33,7 @@ export default {
 }
 
 .img {
+    max-width: 1200px;
     padding-top: (13/360)*100%;
     border-radius: 10px;
     width:100vw;
@@ -45,7 +46,7 @@ export default {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     height: ((624-370)/640)*100vh;
     text-align: center;
     margin-top: 2px;

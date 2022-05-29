@@ -16,9 +16,6 @@ export default {
     components: {
 
     },
-    mounted(){
-        this.$store.commit('setUser',{user:{studentId:null,groupId:null,groupHeadId:null},name:'',group:''})
-    },
     methods: {
 
     },
